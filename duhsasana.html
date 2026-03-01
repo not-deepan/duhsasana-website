@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Duhsasana | Deepan Kishor S</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black: #0d0d0d;
+  --red: #8b0000;
+  --gold: #d4af37;
+  --text: #e6e6e6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--black);
+  color: var(--text);
+  font-family: 'Playfair Display', serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+section {
+  min-height: 100vh;
+  padding: 100px 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+h1, h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 800px;
+}
+
+.hero {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(139,0,0,0.8)),
+  url("https://images.unsplash.com/photo-1604079628040-94301bb21b91?auto=format&fit=crop&w=1950&q=80") center/cover fixed;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-dark {
+  background: linear-gradient(to bottom, var(--black), #1a0000);
+}
+
+.section-red {
+  background: linear-gradient(to bottom, #1a0000, var(--black));
+}
+
+.highlight {
+  color: var(--red);
+  font-weight: bold;
+}
+
+.choice-btns {
+  margin-top: 40px;
+}
+
+button {
+  background: transparent;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  padding: 12px 30px;
+  margin-right: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: var(--gold);
+  color: black;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  background: black;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+@media(max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 1.8rem; }
+  p { font-size: 1rem; }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <h1>Duhsasana</h1>
+  <p>The Warrior of Ruthless Loyalty</p>
+</section>
+
+<section class="section-dark fade">
+  <h2>Origin Story</h2>
+  <p>
+    Born to a blind king, Duhsasana was raised in the shadow of ambition.
+    His devotion to his brother became his identity.
+    Loyalty turned into <span class="highlight">obsession</span>.
+  </p>
+</section>
+
+<section class="section-red fade">
+  <h2>The Dice Game</h2>
+  <p>
+    In the royal court, power replaced justice.
+    Under command, he dragged Draupadi —
+    a moment that stained history in red.
+  </p>
+</section>
+
+<section class="section-dark fade">
+  <h2>Psychological Analysis</h2>
+  <p>
+    Duhsasana represents blind loyalty.
+    When obedience overrides morality,
+    ego disguises itself as strength.
+  </p>
+</section>
+
+<section class="section-red fade">
+  <h2>The Fall</h2>
+  <p>
+    On the battlefield, Bhima fulfilled his vow.
+    Loyalty met consequence.
+    Arrogance met destiny.
+  </p>
+</section>
+
+<section class="section-dark fade">
+  <h2>What Would You Choose?</h2>
+  <p>Dharma or Loyalty?</p>
+  <div class="choice-btns">
+    <button>Dharma</button>
+    <button>Loyalty</button>
+  </div>
+</section>
+
+<div class="footer">
+  Created by <strong>Deepan Kishor S</strong><br>
+  Roll No: <strong>CB.EN.U4CCE24063</strong>
+</div>
+
+<script>
+const faders = document.querySelectorAll(".fade");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.3 });
+
+faders.forEach(fader => observer.observe(fader));
+</script>
+
+</body>
+</html>
