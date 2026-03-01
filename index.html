@@ -1,199 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Duhsasana | Deepan Kishor S</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --black: #0d0d0d;
-  --red: #8b0000;
-  --gold: #d4af37;
-  --text: #e6e6e6;
+:root{
+--royal:#1e3a8a;
+--gold:#facc15;
+--light:#f8fafc;
+--dark:#0f172a;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(to bottom,#e0f2fe,#ffffff);
+color:var(--dark);
+scroll-behavior:smooth;
 }
 
-body {
-  background: var(--black);
-  color: var(--text);
-  font-family: 'Playfair Display', serif;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:var(--royal);
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
 }
 
-section {
-  min-height: 100vh;
-  padding: 100px 10%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
+nav h2{
+color:var(--gold);
+font-family:'Cinzel',serif;
 }
 
-h1, h2 {
-  font-family: 'Cinzel', serif;
-  color: var(--gold);
-  margin-bottom: 20px;
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+font-weight:500;
 }
 
-h1 {
-  font-size: 4rem;
-  text-transform: uppercase;
-  letter-spacing: 3px;
+nav a:hover{
+color:var(--gold);
 }
 
-h2 {
-  font-size: 2.5rem;
+section{
+min-height:100vh;
+padding:120px 10%;
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
 
-p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  max-width: 800px;
+h1,h2{
+font-family:'Cinzel',serif;
+margin-bottom:20px;
+color:var(--royal);
 }
 
-.hero {
-  background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(139,0,0,0.8)),
-  url("https://images.unsplash.com/photo-1604079628040-94301bb21b91?auto=format&fit=crop&w=1950&q=80") center/cover fixed;
+h1{font-size:3.5rem}
+h2{font-size:2.2rem}
+
+p{
+max-width:800px;
+line-height:1.8;
+margin-bottom:20px;
 }
 
-.fade {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 1s ease;
+.hero{
+background:url("https://images.unsplash.com/photo-1608889175152-1e2e8f8a9c32?auto=format&fit=crop&w=1950&q=80") center/cover no-repeat;
+color:white;
+text-align:center;
+position:relative;
 }
 
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(30,58,138,0.8);
 }
 
-.section-dark {
-  background: linear-gradient(to bottom, var(--black), #1a0000);
+.hero-content{
+position:relative;
+z-index:2;
 }
 
-.section-red {
-  background: linear-gradient(to bottom, #1a0000, var(--black));
+.hero h1{
+color:var(--gold);
 }
 
-.highlight {
-  color: var(--red);
-  font-weight: bold;
+img{
+width:100%;
+max-width:500px;
+border-radius:10px;
+margin-top:20px;
 }
 
-.choice-btns {
-  margin-top: 40px;
+.timeline{
+border-left:4px solid var(--royal);
+padding-left:20px;
 }
 
-button {
-  background: transparent;
-  border: 2px solid var(--gold);
-  color: var(--gold);
-  padding: 12px 30px;
-  margin-right: 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
+.timeline div{
+margin-bottom:30px;
 }
 
-button:hover {
-  background: var(--gold);
-  color: black;
+button{
+padding:12px 25px;
+border:none;
+background:var(--royal);
+color:white;
+font-weight:bold;
+cursor:pointer;
+margin-top:20px;
 }
 
-.footer {
-  text-align: center;
-  padding: 30px;
-  background: black;
-  font-size: 0.9rem;
-  color: #aaa;
+button:hover{
+background:var(--gold);
+color:black;
 }
 
-@media(max-width: 768px) {
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 1.8rem; }
-  p { font-size: 1rem; }
+.footer{
+background:var(--royal);
+color:white;
+text-align:center;
+padding:30px;
+}
+
+a.source{
+color:var(--royal);
+font-weight:bold;
+}
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:768px){
+h1{font-size:2rem}
+h2{font-size:1.5rem}
 }
 </style>
 </head>
 
 <body>
 
+<nav>
+<h2>Duhsasana</h2>
+<div>
+<a href="#origin">Origin</a>
+<a href="#incident">Dice Game</a>
+<a href="#analysis">Analysis</a>
+<a href="#fall">Fall</a>
+<a href="#sources">Sources</a>
+</div>
+</nav>
+
 <section class="hero">
-  <h1>Duhsasana</h1>
-  <p>The Warrior of Ruthless Loyalty</p>
+<div class="hero-content">
+<h1>Duhsasana</h1>
+<p>The Warrior of Ruthless Loyalty</p>
+</div>
 </section>
 
-<section class="section-dark fade">
-  <h2>Origin Story</h2>
-  <p>
-    Born to a blind king, Duhsasana was raised in the shadow of ambition.
-    His devotion to his brother became his identity.
-    Loyalty turned into <span class="highlight">obsession</span>.
-  </p>
+<section id="origin" class="fade">
+<h2>Origin Story</h2>
+<p>Duhsasana was the second son of King Dhritarashtra and Queen Gandhari. Raised in the Kuru royal palace, he grew up in deep loyalty to his elder brother Duryodhana. His identity was built on obedience and power.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Kauravas.jpg">
 </section>
 
-<section class="section-red fade">
-  <h2>The Dice Game</h2>
-  <p>
-    In the royal court, power replaced justice.
-    Under command, he dragged Draupadi —
-    a moment that stained history in red.
-  </p>
+<section id="incident" class="fade">
+<h2>The Dice Game Incident</h2>
+<p>One of the most infamous moments in the Mahabharata was when Duhsasana dragged Draupadi into the royal court after Yudhishthira lost her in a dice game. This act became a turning point leading to the Kurukshetra war.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Draupadi_Vastraharan.jpg">
 </section>
 
-<section class="section-dark fade">
-  <h2>Psychological Analysis</h2>
-  <p>
-    Duhsasana represents blind loyalty.
-    When obedience overrides morality,
-    ego disguises itself as strength.
-  </p>
+<section id="analysis" class="fade">
+<h2>Psychological Analysis</h2>
+<p>Duhsasana symbolizes blind loyalty. His actions reflect how ego, power, and obedience can override moral judgment. He represents how following authority without questioning leads to destruction.</p>
+<div class="timeline">
+<div>
+<h3>✔ Loyalty</h3>
+<p>Devoted completely to Duryodhana.</p>
+</div>
+<div>
+<h3>✔ Ego</h3>
+<p>Royal arrogance blinded him from consequences.</p>
+</div>
+<div>
+<h3>✔ Power Abuse</h3>
+<p>Used authority without righteousness.</p>
+</div>
+</div>
 </section>
 
-<section class="section-red fade">
-  <h2>The Fall</h2>
-  <p>
-    On the battlefield, Bhima fulfilled his vow.
-    Loyalty met consequence.
-    Arrogance met destiny.
-  </p>
+<section id="fall" class="fade">
+<h2>The Fall</h2>
+<p>During the Kurukshetra war, Bhima fulfilled his vow to kill Duhsasana. This marked the consequence of humiliation and injustice committed in the royal court.</p>
+<button onclick="alert('History teaches us that Dharma ultimately prevails.')">
+What Would You Choose? Dharma or Loyalty?
+</button>
 </section>
 
-<section class="section-dark fade">
-  <h2>What Would You Choose?</h2>
-  <p>Dharma or Loyalty?</p>
-  <div class="choice-btns">
-    <button>Dharma</button>
-    <button>Loyalty</button>
-  </div>
+<section id="sources" class="fade">
+<h2>Sources & References</h2>
+<p>Learn more about Duhsasana from:</p>
+<p><a class="source" href="https://en.wikipedia.org/wiki/Dushasana" target="_blank">Wikipedia - Dushasana</a></p>
+<p><a class="source" href="https://www.britannica.com/topic/Mahabharata" target="_blank">Britannica - Mahabharata</a></p>
 </section>
 
 <div class="footer">
-  Created by <strong>Deepan Kishor S</strong><br>
-  Roll No: <strong>CB.EN.U4CCE24063</strong>
+<p>Created by <strong>Deepan Kishor S</strong></p>
+<p>Roll No: <strong>CB.EN.U4CCE24063</strong></p>
 </div>
 
 <script>
-const faders = document.querySelectorAll(".fade");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-}, { threshold: 0.3 });
-
-faders.forEach(fader => observer.observe(fader));
+const faders=document.querySelectorAll('.fade');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+},{threshold:0.3});
+faders.forEach(fader=>observer.observe(fader));
 </script>
 
 </body>
