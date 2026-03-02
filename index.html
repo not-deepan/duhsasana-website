@@ -1,12 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Duhsasana Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duhsasana | Deepan Kishor S</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(to bottom,#dbeafe,#ffffff);
+color:#0f172a;
+scroll-behavior:smooth;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#1e3a8a;
+padding:15px;
+text-align:center;
+z-index:1000;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#facc15;
+}
+
+section{
+padding:120px 20px;
+min-height:100vh;
+text-align:center;
+}
+
+h1{
+font-size:40px;
+color:#facc15;
+}
+
+h2{
+color:#1e3a8a;
+margin-top:20px;
+}
+
+p{
+max-width:800px;
+margin:20px auto;
+line-height:1.8;
+}
+
+img{
+width:80%;
+max-width:500px;
+border-radius:10px;
+margin-top:20px;
+transition:0.5s;
+}
+
+img:hover{
+transform:scale(1.05);
+}
+
+.hero{
+background:#1e3a8a;
+color:white;
+}
+
+.footer{
+background:#1e3a8a;
+color:white;
+padding:30px;
+}
+
+button{
+padding:12px 25px;
+background:#1e3a8a;
+color:white;
+border:none;
+cursor:pointer;
+font-weight:bold;
+margin-top:20px;
+}
+
+button:hover{
+background:#facc15;
+color:black;
+}
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+</style>
 </head>
-<body style="background:lightblue; text-align:center; padding-top:100px;">
-<h1>Duhsasana Website</h1>
-<h2>Created by Deepan Kishor S</h2>
-<h3>Roll No: CB.EN.U4CCE24063</h3>
-<p>If you see this, GitHub Pages is working.</p>
+
+<body>
+
+<nav>
+<a href="#origin">Origin</a>
+<a href="#incident">Dice Game</a>
+<a href="#analysis">Analysis</a>
+<a href="#fall">Fall</a>
+<a href="#sources">Sources</a>
+</nav>
+
+<section class="hero">
+<h1>Duhsasana</h1>
+<p>The Warrior of Ruthless Loyalty</p>
+<p>An analytical character study from the Mahabharata</p>
+</section>
+
+<section id="origin" class="fade">
+<h2>Origin & Background</h2>
+<p>Duhsasana was the second son of King Dhritarashtra and Queen Gandhari of the Kuru dynasty. Raised in royal privilege, he developed unwavering loyalty toward his elder brother Duryodhana. His identity was shaped by obedience, pride, and rivalry against the Pandavas.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Kauravas.jpg">
+</section>
+
+<section id="incident" class="fade">
+<h2>The Dice Game Incident</h2>
+<p>The turning point of his life came during the infamous dice game. After Yudhishthira lost Draupadi, Duhsasana dragged her into the royal court. This act symbolized the breakdown of dharma and intensified the conflict that led to the Kurukshetra war.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Draupadi_Vastraharan.jpg">
+</section>
+
+<section id="analysis" class="fade">
+<h2>Psychological Interpretation</h2>
+<p>Duhsasana represents blind loyalty and the consequences of unchecked ego. His character demonstrates how obedience without moral reasoning can lead to catastrophic outcomes. His story is a warning against power misuse and arrogance.</p>
+</section>
+
+<section id="fall" class="fade">
+<h2>The Fall in Kurukshetra</h2>
+<p>During the great war, Bhima fulfilled his vow and killed Duhsasana. This act symbolized karmic justice and restoration of moral balance within the epic.</p>
+<button onclick="alert('Dharma ultimately triumphs over blind loyalty.')">
+Dharma or Loyalty?
+</button>
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Kurukshetra_War.jpg">
+</section>
+
+<section id="sources" class="fade">
+<h2>References</h2>
+<p><a href="https://en.wikipedia.org/wiki/Dushasana" target="_blank">Wikipedia – Dushasana</a></p>
+<p><a href="https://www.britannica.com/topic/Mahabharata" target="_blank">Britannica – Mahabharata</a></p>
+</section>
+
+<div class="footer">
+<p>Created by <strong>Deepan Kishor S</strong></p>
+<p>Roll No: <strong>CB.EN.U4CCE24063</strong></p>
+</div>
+
+<script>
+const faders=document.querySelectorAll('.fade');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+},{threshold:0.3});
+faders.forEach(fader=>observer.observe(fader));
+</script>
+
 </body>
 </html>
